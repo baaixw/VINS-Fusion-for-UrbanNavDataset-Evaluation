@@ -1,0 +1,33 @@
+%YAML:1.0
+---
+#xiaomi8 android 
+# model_type: PINHOLE
+# camera_name: camera
+# image_width: 1920
+# image_height: 1080
+# distortion_parameters:
+#    k1: 0.15345638394021716
+#    k2: -0.29245476647533925
+#    p1: -0.0026774118296027396
+#    p2: 0.003280023401982872
+# projection_parameters:
+#    fx: 1439.145787744202
+#    fy: 1435.2951737138117
+#    cx: 960.0557746078234
+#    cy: 536.742235693866
+
+#left camera of sensorkit
+model_type: PINHOLE
+camera_name: camera
+image_width: 672
+image_height: 376
+distortion_parameters:
+   k1:  -0.0442856
+   k2: 0.0133574
+   p1: 0
+   p2: 0
+projection_parameters:
+   fx: 264.9425
+   fy: 264.79
+   cx: 334.3975
+   cy: 183.162
