@@ -31,6 +31,8 @@ ros::Publisher pub_keyframe_pose;
 ros::Publisher pub_keyframe_point;
 ros::Publisher pub_extrinsic;
 ros::Publisher pub_odometrySpan;
+ros::Subscriber span_BP_sub;// subscribe the topic of Span
+ros::Subscriber VINS_GNSS_FG_sub;
 
 ros::Publisher pub_image_track;
 
@@ -96,6 +98,8 @@ void span_bp_callback(const novatel_msgs::INSPVAXConstPtr& fix_msg)
     double theta = (original_heading)*(3.141592/180.0);
     enu1(0) = prex_*cos(theta) - prey_*sin(theta);
     enu1(1) = prex_*sin(theta) + prey_*cos(theta);
+    std::cout<<"enu1 ------->: " << enu1 << "\n";
+    
 
     spanOdom.header.frame_id = "world"; // pose
     spanOdom.child_frame_id = "world"; // twist
@@ -172,6 +176,7 @@ void registerPub(ros::NodeHandle &n)
     pub_latest_odometry = n.advertise<nav_msgs::Odometry>("imu_propagate", 1000);
     pub_path = n.advertise<nav_msgs::Path>("path", 1000);
     pub_odometry = n.advertise<nav_msgs::Odometry>("odometry", 1000);
+    pub_odometrySpan = n.advertise<nav_msgs::Odometry>("odometryenu", 1000);
     pub_point_cloud = n.advertise<sensor_msgs::PointCloud>("point_cloud", 1000);
     pub_margin_cloud = n.advertise<sensor_msgs::PointCloud>("margin_cloud", 1000);
     pub_key_poses = n.advertise<visualization_msgs::Marker>("key_poses", 1000);
@@ -182,8 +187,17 @@ void registerPub(ros::NodeHandle &n)
     pub_extrinsic = n.advertise<nav_msgs::Odometry>("extrinsic", 1000);
     pub_image_track = n.advertise<sensor_msgs::Image>("image_track", 1000);
 
+    span_BP_sub =n.subscribe("/novatel_data/inspvax", 500, span_bp_callback);
+    VINS_GNSS_FG_sub = n.subscribe("/globalEstimator/global_odometry",500,VINS_GNSS_FG);
+
     cameraposevisual.setScale(0.1);
     cameraposevisual.setLineWidth(0.01);
+}
+
+void VINS_GNSS_FG(const nav_msgs::OdometryConstPtr& odom_msg)
+{
+   const ros::Time& stamp = odom_msg->header.stamp; // ros time 
+   odometry_G = *odom_msg; 
 }
 
 void pubLatestOdometry(const Eigen::Vector3d &P, const Eigen::Quaterniond &Q, const Eigen::Vector3d &V, double t)
