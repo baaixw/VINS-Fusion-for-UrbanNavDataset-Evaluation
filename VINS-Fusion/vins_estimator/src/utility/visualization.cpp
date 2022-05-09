@@ -304,12 +304,12 @@ void pubOdometry(const Estimator &estimator, const std_msgs::Header &header)
         double roll, pitch, yaw;
         m.getRPY(roll, pitch, yaw);
 
-        vins_heading = yaw*(-1)*(180/3.14);
-        if(vins_heading<0)
-        {
-          vins_heading = vins_heading+360;          
+        // vins_heading = yaw*(-1)*(180/3.14);
+        // if(vins_heading<0)
+        // {
+        //   vins_heading = vins_heading+360;          
 
-        }
+        // }
 
         odometry.twist.twist.linear.x = estimator.Vs[WINDOW_SIZE].x();
         odometry.twist.twist.linear.y = estimator.Vs[WINDOW_SIZE].y();
