@@ -8,43 +8,33 @@ _____________________
 please refer to VINS-Fusion Github
 
 ## 2. Build 
-   mkdir catkin/src
-
-   cd catkin/src
-
-   mkdir result
-
-   cd catkin/src
-
-   git clone https://github.com/baaixw/catkin_V1
-
-   cd ..
-
-  catkin_make
+###
+    mkdir catkin/src
+    cd catkin/src
+    mkdir result
+    cd catkin/src
+    git clone https://github.com/baaixw/catkin_V1
+    cd ..
+    catkin_make
 
 ## 3. UrbanNavDataset
 https://github.com/IPNL-POLYU/UrbanNavDataset
 ## 4. How to run?
-  ### cd catkin
-  ### ./all.sh
-  ### important note: remember to change your own path for result and data
+###
+    cd catkin
+    ./all.sh
+  important note: remember to change your own path for result and data
 ## 5. Evaluation results
 ### Day 20210508 by xiwei: the frames of VIO and Groundtruth are successfully aligned 
 ### 5.1  Evaluation of Whampoa data:UrbanNav-HK-Deep-Urban-1
 - When Left camera is used, set estimate_extrinsic: 0 (Have an accurate extrinsic parameters) and the evaluation result as follows:
-
+###
       max	  15.405519
-
       mean 	0.681131
-
       median	0.384471
-
       min	 0.000118
-
       rmse	1.142427
-
       sse	 2004.693594
-
       std 	0.917169
 
 - Trajectory
@@ -103,4 +93,4 @@ https://github.com/IPNL-POLYU/UrbanNavDataset
 ### Fail,  T-T
 
 ## 6. Acknowledgements
-#### The VINS-Fusion (https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) framework is used for performance evaluation of dataset collected in Hong Kong urban canyons. When performing coordinate transformation，some functions are derived from GraphGNSSLib (https://github.com/weisongwen/GraphGNSSLib). We appreciate and respect the authors' efforts for their contribution to the research community. If there is any thing inappropriate, please contact me through 19078299r@connect.polyu.hk (BAI).
+The VINS-Fusion (https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) framework is used for performance evaluation of dataset collected in Hong Kong urban canyons. When performing coordinate transformation，some functions are derived from GraphGNSSLib (https://github.com/weisongwen/GraphGNSSLib). We appreciate and respect the authors' efforts for their contribution to the research community. If there is any thing inappropriate, please contact me through 19078299r@connect.polyu.hk (BAI).
