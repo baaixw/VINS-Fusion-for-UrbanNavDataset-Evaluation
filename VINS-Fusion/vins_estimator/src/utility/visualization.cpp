@@ -160,7 +160,7 @@ void span_bp_callback(const novatel_msgs::INSPVAXConstPtr& fix_msg)
             << odometry_0.pose.pose.orientation.x << " "
             << odometry_0.pose.pose.orientation.y << " "
             << odometry_0.pose.pose.orientation.z << " "
-            << odometry_0.pose.pose.orientation.w<< endl; 
+            << odometry_0.pose.pose.orientation.w << endl; 
           //  << g_pdop << endl;  
         //   << estimator.Vs[WINDOW_SIZE].x() << ","
         //   << estimator.Vs[WINDOW_SIZE].y() << ","
