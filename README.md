@@ -1,9 +1,11 @@
+# This framework is published by Dr. Shen and his team, and we thank and respect the authors for all their efforts. Here, the framework is used for research only, and we evaluate the performance of VINS in challenging urban canyons.
+
 # catkin
 Original vins-fusion for validation some data. The related path has been revised to ourself path.
 The robust function is important for the performance of VINS.
 # Day 20210508 by xiwei: the VIO and Groundtruth are successfully aligned (the whampoaData-0521 validation) 
 ## 1. Evaluation of Whampoa data:UrbanNav-HK-Deep-Urban-1
-### Left camera is used, set estimate_extrinsic: 1 (Have an initial guess about extrinsic parameters)
+### When Left camera is used, set estimate_extrinsic: 1 (Have an initial guess about extrinsic parameters)
 ### The evaluation result as follows:
        max	15.405519
       mean	0.681131
@@ -17,9 +19,8 @@ The robust function is important for the performance of VINS.
   <img width="712pix" src="result/trajectoryLeft.png">
 </p>
 
-### Stereo camera is used, set estimate_extrinsic: 1,and set td: 0.05 
-### Interestingly, we set the bag file start from second 1 as follows, then the data can initialize successfully, otherwise would fail
-- rosbag  play -s 1 Whampoasensors.bag 
+### When Stereo camera is used, set estimate_extrinsic: 1,and set td: 0.05 
+### Interestingly, we play the bag file starting from second 1 (rosbag  play -s 1 Whampoasensors.bag), then the data can initialize successfully, otherwise fail. This is interesting point, there must be a reason behind that. 
 ### The evaluation result as follows:
        max	2.372637
       mean	0.327725
@@ -34,7 +35,7 @@ The robust function is important for the performance of VINS.
 </p>
 
 ## 2. Evaluation of TST data:UrbanNav-HK-Medium-Urban-1
-### Stereo camera is used, set estimate_extrinsic: 1,and set td: 0.05 
+### Stereo camera is used, set estimate_extrinsic: 1,and set td: 0 
 ### The evaluation result as follows:
        max	2.909680
       mean	0.480456

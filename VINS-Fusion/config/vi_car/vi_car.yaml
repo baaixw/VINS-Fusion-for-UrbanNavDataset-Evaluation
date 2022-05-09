@@ -3,23 +3,22 @@
 #common parameters
 #support: 1 imu 1 cam; 1 imu 2 cam: 2 cam; 
 imu: 1         
-num_of_cam: 2
+num_of_cam: 1
 
 imu_topic: "/imu/data"
 #"/imu0"
 image0_topic: "/zed2/camera/left/image_raw"
-image1_topic: "/zed2/camera/right/image_raw"
+# image1_topic: "/zed2/camera/right/image_raw"
 output_path: "/home/wws/catkin/src/result"
 
 cam0_calib: "cam0_pinhole.yaml"
-cam1_calib: "cam1_pinhole.yaml"
-# cam1_calib: "cam1_mei.yaml"
+# cam1_calib: "cam1_pinhole.yaml"
 image_width: 672
 image_height: 376
    
 
 # Extrinsic parameter between IMU and Camera.
-estimate_extrinsic: 1 # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
+estimate_extrinsic: 0 # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
                         # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
 # estimate_extrinsic: 0
 # If you don't know anything about the camera-IMU transformation, 

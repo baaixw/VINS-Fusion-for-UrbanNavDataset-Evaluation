@@ -120,7 +120,7 @@ void span_bp_callback(const novatel_msgs::INSPVAXConstPtr& fix_msg)
 
     double roll = fix_msg->roll;
     double pitch = fix_msg->pitch;
-    /*align the GPS and VIO coordiante frame*/
+    /*heading changes of Span*/
     double yaw = -(fix_msg->azimuth-original_heading);
 
     //transform the euclidean to quanternion
