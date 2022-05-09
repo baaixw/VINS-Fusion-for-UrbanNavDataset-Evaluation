@@ -89,7 +89,9 @@ https://github.com/IPNL-POLYU/UrbanNavDataset
 ### 5.3 Evaluation of Mongkok data:UrbanNav-HK-Harsh-Urban-1
 Fail,  T-T
 
-## 6. Evaluation
+## 6. Evaluation Tools and command line
+- Python package for the evaluation of odometry and SLAM:
+github.com/MichaelGrupp/evo
 - evo_rpe tum groundTruth.csv vio.csv --plot --plot_mode xyz --save_plot ./VINSplot --save_results ./VINS.zip
 ## 7. Acknowledgements
 #### The VINS-Fusion (https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) framework is used for performance evaluation of dataset collected in Hong Kong urban canyons. When performing coordinate transformation，some functions are derived from GraphGNSSLib (https://github.com/weisongwen/GraphGNSSLib). We appreciate and respect the authors' efforts for their contribution to the research community. If there is any thing inappropriate, please contact me through 19078299r@connect.polyu.hk (BAI).
