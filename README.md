@@ -10,7 +10,7 @@ please refer to VINS-Fusion Github
     cd catkin/src
     mkdir result
     cd catkin/src
-    git clone https://github.com/baaixw/catkin_V1
+    git clone https://github.com/baaixw/VINS-Fusion-for-UrbanNavDataset-Evaluation
     cd ..
     catkin_make
 

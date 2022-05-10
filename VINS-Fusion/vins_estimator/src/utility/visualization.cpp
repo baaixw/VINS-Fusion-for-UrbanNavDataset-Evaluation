@@ -309,7 +309,7 @@ void pubOdometry(const Estimator &estimator, const std_msgs::Header &header)
         // {
         //   vins_heading = vins_heading+360;          
 
-        // }
+        // } //not used
 
         odometry.twist.twist.linear.x = estimator.Vs[WINDOW_SIZE].x();
         odometry.twist.twist.linear.y = estimator.Vs[WINDOW_SIZE].y();
