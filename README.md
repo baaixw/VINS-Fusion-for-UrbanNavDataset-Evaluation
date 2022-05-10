@@ -28,11 +28,11 @@ https://github.com/IPNL-POLYU/UrbanNavDataset
 ###
       max	  15.405519
       mean 	0.681131
-      median	0.384471
-      min	 0.000118
+      median0.384471
+      min	  0.000118
       rmse	1.142427
       sse	 2004.693594
-      std 	0.917169
+      std  0.917169
 
 - Trajectory
 <p align="center">
@@ -44,7 +44,7 @@ https://github.com/IPNL-POLYU/UrbanNavDataset
   ###
       max	  2.372637
       mean	0.327725
-      median	0.197800
+      median0.197800
        min	0.000059
       rmse	0.505415
        sse	392.107044
@@ -60,9 +60,9 @@ https://github.com/IPNL-POLYU/UrbanNavDataset
 - When Left camera is used, set estimate_extrinsic: 0 (Have an acurate extrinsic parameters) The evaluation result as follows:
 
   ### 
-      max	4.726060
+      max	  4.726060
       mean	0.734495
-      median	0.401529
+      median0.401529
        min	0.000484
       rmse	1.145298
        sse	1029.691026
@@ -91,7 +91,7 @@ Fail,  T-T
 
 ## 6. Evaluation Tools and command line
 - Python package for the evaluation of odometry and SLAM:
-github.com/MichaelGrupp/evo
+  github.com/MichaelGrupp/evo
 - evo_rpe tum groundTruth.csv vio.csv --plot --plot_mode xyz --save_plot ./VINSplot --save_results ./VINS.zip
 ## 7. Acknowledgements
 The VINS-Fusion (https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) framework is used for performance evaluation of dataset collected in Hong Kong urban canyons. When performing coordinate transformation，some functions are derived from GraphGNSSLib (https://github.com/weisongwen/GraphGNSSLib). We appreciate and respect the authors' efforts for their contribution to the research community. If there is any thing inappropriate, please contact me through 19078299r@connect.polyu.hk (BAI).
